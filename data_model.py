@@ -32,7 +32,9 @@ class StockDataSet(object):
             self.raw_seq = [price for tup in raw_df[['Open', 'Close']].values for price in tup]
 
         self.raw_seq = np.array(self.raw_seq)          #得到输入数据矩阵，是一个一维的
-        self.train_X, self.train_y, self.test_X, self.test_y = self._prepare_data(self.raw_seq)
+        self.final_price = self.raw_seq[-1]
+        print(self.final_price,"这是最后一个价格")
+        self.train_X, self.train_y, self.test_X, self.test_y , self.predict_X = self._prepare_data(self.raw_seq)
 
     def info(self):                        #股票的信息，训练集长度，测试集长度
         return "StockDataSet [%s] train: %d test: %d" % (
@@ -49,11 +51,12 @@ class StockDataSet(object):
         # split into groups of num_steps
         X = np.array([seq[i: i + self.num_steps] for i in range(len(seq) - self.num_steps)])  #将每一次的训练数据组成一个集合
         y = np.array([seq[i + self.num_steps] for i in range(len(seq) - self.num_steps)])
+        predict_X =  np.array([seq[len(seq)-self.num_steps : len(seq)]] )  #将每一次的训练数据组成一个集合
 
         train_size = int(len(X) * (1.0 - self.test_ratio))                                    #分割出训练集和测试集
         train_X, test_X = X[:train_size], X[train_size:]
         train_y, test_y = y[:train_size], y[train_size:]
-        return train_X, train_y, test_X, test_y
+        return train_X, train_y, test_X, test_y,predict_X
 
     def generate_one_epoch(self, batch_size):                  #产生一个生成器
         num_batches = int(len(self.train_X)) // batch_size     #计算共有多少批次

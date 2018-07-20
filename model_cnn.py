@@ -20,7 +20,7 @@ class CNN(object):
 
         self.sess= sess
         self.embedding_dim = embedding_dim
-        self.num_steps = num_steps
+        self.num_steps2 = num_steps
         self.num_filters = num_filters  # 卷积核数目
         self.kernel_size = kernel_size  # 卷积核尺寸
         self.hidden_dim = hidden_dim   # 全连接层神经元
@@ -28,7 +28,7 @@ class CNN(object):
         self.logs_dir = logs_dir
         self.plots_dir = plots_dir
 
-        self.num_classes = 1,  # 类别数
+        self.num_classes = 5,  # 类别数
         self.print_per_batch = 100,  # 每多少轮输出一次结果
         self.save_per_batch = 10,  # 每多少轮存入tensorboard
 
@@ -38,8 +38,8 @@ class CNN(object):
         """CNN模型"""
         # 三个待输入的数据
         self.learning_rate = tf.placeholder(tf.float32, None, name="learning_rate")
-        self.inputs = tf.placeholder(tf.float32, [None, self.num_steps, self.embedding_dim], name='inputs')
-        self.targets =tf.placeholder(tf.float32, [None, 1], name='targets')
+        self.inputs = tf.placeholder(tf.float32, [None, self.num_steps2, self.embedding_dim], name='inputs')
+        self.targets =tf.placeholder(tf.float32, [None, 5], name='targets')
 
 
         # CNN layer
@@ -53,8 +53,7 @@ class CNN(object):
         fc = tf.contrib.layers.dropout(fc, self.keep_prob)
 
         # 预测器
-        self.pred = tf.layers.dense(fc, 1, name='fc2')
-
+        self.pred = tf.layers.dense(fc, 5, name='fc2')
 
         # 损失函数
         self.loss = tf.reduce_mean(tf.square(self.pred-self.targets))
@@ -65,10 +64,24 @@ class CNN(object):
         self.saver = tf.train.Saver(max_to_keep=30)
 
 
+    def test(self,dataset_list):
+        merged_test_X = []
+        merged_test_X += list(dataset_list.predict_X)
+        merged_test_X = np.array(merged_test_X)  # 将测试数据集从list模式转换成矩阵 842*30*1
+        test_data_feed = {
+            self.learning_rate: 0.0,
+            self.inputs: merged_test_X,
+        }
+        test_pred = self.sess.run(self.pred, test_data_feed)
+        print("CNN对未来五天的预测",test_pred[-1])
+        return test_pred[-1]
+
+
     def train(self,dataset_list,config):
 
         print("Loading training and validation data...")
-        tf.global_variables_initializer().run()       #对参数进行初始化
+        if not config.train:
+            tf.global_variables_initializer().run()       #对参数进行初始化
 
         # 载入训练集与验证集
         merged_test_X = []
@@ -108,14 +121,19 @@ class CNN(object):
                 train_loss,_ = self.sess.run([self.loss,self.optim],train_data_feed)    #计算损失函数，并进行权值的更新
                 if np.mod(global_step,100) == 1:                                        #每训练100个数据块就进行一次测试
                     test_loss, test_pred = self.sess.run([self.loss,self.pred],test_data_feed)
+
                     print("Step:%d [Epoch:%d] [Learning rate: %.6f] train_loss:%.6f test_loss:%.6f" % (
                     # 输出当前的训练集的损失，测试集的损失
                         global_step, epoch, learning_rate, train_loss, test_loss))
 
+                    # print("Step:%d [Epoch:%d] [Learning rate: %.6f]  test_loss:%.6f" % (
+                    # # 输出当前的训练集的损失，测试集的损失
+                    #     global_step, epoch, learning_rate,  test_loss))
+
                     # for sample_sym, indices in sample_indices.items():  # 将字典转换为列表
                     image_path = os.path.join(self.model_plots_dir, "{}_epoch{:02d}_step{:04d}.png".format(  # 给图片命名
                         dataset_list.stock_sym, epoch, epoch_step))
-                    print("cnnnd")
+
 
                     indices = np.array([
                         i for i in range(len(merged_test_y))
@@ -135,7 +153,7 @@ class CNN(object):
     @property  #可以将一个对象的方法变成它的属性
     def model_name(self):       #给神经网络起名字。。。
         name = "stock_cnn%d_step%d_input%d" % (
-            self.num_filters, self.num_steps, self.embedding_dim)
+            self.num_filters, self.num_steps2, self.embedding_dim)
 
         return name
 
@@ -183,10 +201,15 @@ class CNN(object):
     def plot_samples(self, preds, targets, figname, stock_sym=None):             #绘图，将当前的预测值和真实值绘制成png
         def flatten(seq):  # 将二维的数组变成一维的
             return [x for y in seq for x in y]
-        num_point = 100                                                           #每幅图绘制的点的个数
-        truths = flatten(targets)[:num_point]
-        preds = flatten(preds)[:num_point]
-        days = range(len(truths))[:num_point]
+        num_point = len(targets)                                                          #每幅图绘制的点的个数
+        truths = flatten(targets)
+        preds = flatten(preds)
+        days = range(len(truths))[:num_point+4]
+
+
+
+        truths = truths[:4] + [truths[5*i+4] for i in range(num_point)]
+        preds = preds[:4] + [preds[5 * i+4] for i in range(num_point)]
 
 
         plt.figure(figsize=(12, 6))
@@ -196,8 +219,8 @@ class CNN(object):
 
         no= 0.0
         yes=0.0
-        print(preds)
-        print(truths)
+        # print(preds)
+        # print(truths)
         for index in range(len(preds)):
             if preds[index]*truths[index]<0:
                 no +=1

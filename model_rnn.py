@@ -2,6 +2,7 @@
 @author: lilianweng
 """
 import numpy as np
+import pandas as pd
 import os
 import random
 import re
@@ -94,59 +95,46 @@ class LstmRNN(object):
         self.pred_summ = tf.summary.histogram("pred", self.pred)
 
         # self.loss = -tf.reduce_sum(targets * tf.log(tf.clip_by_value(prediction, 1e-10, 1.0)))
-        self.loss = tf.reduce_mean(tf.square(self.pred - self.targets), name="loss_mse")                        #计算损失函数
+        self.loss = tf.reduce_mean(tf.square(tf.abs(self.pred - self.targets)*5-4*tf.sign(self.pred*self.targets)*tf.abs(self.pred-self.targets)), name="loss_mse")     #计算损失函数
+        # self.loss = tf.reduce_mean(tf.square(self.pred - self.targets))
+
         self.optim = tf.train.RMSPropOptimizer(self.learning_rate).minimize(self.loss, name="rmsprop_optim")    #反向传播来进行权值的更新
 
         self.loss_sum = tf.summary.scalar("loss_mse", self.loss)
         self.learning_rate_sum = tf.summary.scalar("learning_rate", self.learning_rate)
 
         self.t_vars = tf.trainable_variables()       #所有需要训练的变量的集合
-        self.saver = tf.train.Saver()                #用于保存和恢复所有的变量
+        self.saver = tf.train.Saver(max_to_keep=30)                #用于保存和恢复所有的变量
 
-    def tset2(self,dataset_list,config):
-        """
-              Args:
-                  dataset_list (<StockDataSet>)
-                  config (tf.app.flags.FLAGS)
-              """
-        assert len(dataset_list) > 0  # 断言股票的个数不为0
-
-        # Merged test data of different stocks.
+    def test2(self, dataset_list):
         merged_test_X = []
-        merged_test_y = []
-        merged_test_labels = []
 
+        for label_, d_ in enumerate(dataset_list):  # 从数据集中选出预测集
+            merged_test_X += list(d_.predict_X)
 
-        for label_, d_ in enumerate(dataset_list):  # 从数据集中选出测试数据集
-            merged_test_X += list(d_.test_X)
-            merged_test_y += list(d_.test_y)
-            merged_test_labels += [[label_]] * len(d_.test_X)
+        merged_test_X = np.array(merged_test_X)
+        _test_X = [merged_test_X[0]]
+        my_test_pred = []
 
-        merged_test_X = np.array(merged_test_X)  # 将测试数据集从list模式转换成矩阵 842*30*1
-        merged_test_y = np.array(merged_test_y)
-        merged_test_labels = np.array(merged_test_labels)
+        for epoch in range(30):              # 预测未来30天的走势
+            if epoch !=0:
+                for i in range(len(_test_X[0])-1):
+                    _test_X[0][i] = _test_X[0][i+1]
 
-        test_data_feed = {
-            self.learning_rate: 0.0,
-            self.inputs: merged_test_X,
-            self.targets: merged_test_y,
-            self.symbols: merged_test_labels,
-        }
+                _test_X[0][-1] = my_test_pred[-1]
 
-        global_step = 0
-        random.seed(time.time())
+            temp_test_X = np.array(_test_X)
 
-        print("开始测试")  # 开始训练这支股票
-        for epoch in range(2):  # 开始迭代，迭代的次数为max_epoch（50）
-            # 以下代码将被删除
-            test_loss, test_pred = self.sess.run([self.loss, self.pred], test_data_feed)
-            print("代码第147行，打印训练前的权值", self.sess.run(self.ws)[-10:])
+            test_data_feed = {
+                self.learning_rate: 0.0,
+                self.inputs: temp_test_X,
+            }
 
-            print("Step:%d [Epoch:%d]  test_loss:%.6f" % (
-                # 输出当前的训练集的损失，测试集的损失
-                global_step, epoch, test_loss))
-            # 以上代码将被删除
-        print("测试结束")
+            test_pred = self.sess.run(self.pred, test_data_feed)
+            my_test_pred.append(test_pred[0][0])  # 将预测的结果添加到预测结果集内
+        print("LSTM对未来30天的预测",my_test_pred)
+        return my_test_pred
+
 
     def test(self, dataset_list, config):
         """
@@ -166,7 +154,10 @@ class LstmRNN(object):
             merged_test_y += list(d_.test_y)
             merged_test_labels += [[label_]] * len(d_.test_X)
 
-        merged_test_y=np.array(merged_test_y)
+        merged_test_X = np.array(merged_test_X)
+        merged_test_y = np.array(merged_test_y)
+        merged_test_labels = np.array(merged_test_labels)
+
 
         '''这里是奇葩的预测的开始'''
 
@@ -185,9 +176,9 @@ class LstmRNN(object):
             sample_indices[sym] = target_indices  # 建立字典
         '''这段代码就是为了将真实的结果集能够绘图'''
 
-        print("开始测试")        # 开始测试这支股票
+        print("开始测试",len(merged_test_y))        # 开始测试这支股票
 
-        for epoch in range(300):  # 开始迭代，迭代的次数为max_epoch（50）
+        for epoch in range(len(merged_test_y)):  # 开始迭代，迭代的次数为max_epoch（50）
 
             _test_X = [merged_test_X[epoch]]
             _test_y = [merged_test_y[epoch]]
@@ -198,7 +189,6 @@ class LstmRNN(object):
                         my_test_pred):  # 最新添加的数据将采用之前预测出来的结果来进行                                             #如果预测窗口的大小大于新生成的测试结果，则替换掉后半部分
                     _test_X[0][-len(my_test_pred) + index] = value[0]
             else:
-                print("长度超了")
                 for index, value in enumerate(my_test_pred[(len(my_test_pred) - len(_test_X[0])):]):
                     _test_X[0][index] = value[0]
 
@@ -220,15 +210,27 @@ class LstmRNN(object):
                 global_step, epoch, test_loss))
 
 
-            if epoch % 110 == 109:
+            if epoch % 1100 == len(merged_test_y)-1:
                 sample_preds = my_test_pred
                 for sample_sym, indices in sample_indices.items():  # 将字典转换为列表
                     image_path = os.path.join(self.model_plots_dir, "{}_epoch{:02d}_step{:04d}.png".format(  # 给图片命名
                         sample_sym, epoch, epoch))
                     sample_truth = merged_test_y[indices]
-                    print(sample_truth,"交界处")
-                    print(sample_preds,"结束点")
+                    # sample_preds = sample_preds[indices]
                     self.plot_samples(sample_preds, sample_truth, image_path, stock_sym=sample_sym)  # 绘图，通过预测值和真实值来绘图
+
+        test_data_feed = {
+            self.learning_rate: 0.0,
+            self.inputs: merged_test_X,
+            self.targets: merged_test_y,
+            self.symbols: merged_test_labels,
+        }
+
+        test_loss, test_pred = self.sess.run([self.loss, self.pred], test_data_feed)
+
+        print("Step:%d [Epoch:%d]  test_loss:%.6f" % (
+            # 输出当前的训练集的损失，测试集的损失
+            global_step, epoch, test_loss))
         print("测试结束")
 
         '''这里是奇葩的预测的结束'''
@@ -316,13 +318,13 @@ class LstmRNN(object):
                         [self.loss, self.optim, self.merged_sum], train_data_feed)
                     self.writer.add_summary(train_merged_sum, global_step=global_step)
 
+
+
                     if np.mod(global_step, len(dataset_list) * 100 / config.input_size) == 1:                          #每训练100个数据块就进行一次测试
                         test_loss, test_pred = self.sess.run([self.loss, self.pred], test_data_feed)
 
                         print ("Step:%d [Epoch:%d] [Learning rate: %.6f] train_loss:%.6f test_loss:%.6f" % (           #输出当前的训练集的损失，测试集的损失
                             global_step, epoch, learning_rate, train_loss, test_loss))
-
-
                         # Plot samples
                         print("clllld")
                         for sample_sym, indices in sample_indices.items():                                             #将字典转换为列表
@@ -364,6 +366,7 @@ class LstmRNN(object):
             os.makedirs(model_plots_dir)
         return model_plots_dir
 
+
     def save(self, step):       #保存当前模型
         model_name = self.model_name + ".model"
         self.saver.save(
@@ -394,10 +397,19 @@ class LstmRNN(object):
     def plot_samples(self, preds, targets, figname, stock_sym=None):             #绘图，将当前的预测值和真实值绘制成png
         def flatten(seq):  # 将二维的数组变成一维的
             return [x for y in seq for x in y]
-        num_point = 100                                                           #每幅图绘制的点的个数
+        num_point = len(preds)                                                           #每幅图绘制的点的个数
+
+        print(preds)
+        print(targets)
+
         truths = flatten(targets)[:num_point]
+        # preds = flatten(preds)[:num_point]
         preds = flatten(preds)[:num_point]
         days = range(len(truths))[:num_point]
+
+        #将预测结果写入.CSV文件内
+        dataframe = pd.DataFrame({'pred': np.array(preds).tolist(),'truths':np.array(truths).tolist()})
+        dataframe.to_csv(os.path.join("predictions", "test2.csv"), index=False, sep=',')
 
 
         plt.figure(figsize=(12, 6))
