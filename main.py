@@ -1,10 +1,10 @@
 import os
 import pprint
 import tensorflow as tf
-
+import pandas as pd
 from data_model import StockDataSet
 from model_rnn import LstmRNN
-
+import numpy as np
 from data_model_cnn import CNNStockDataSet
 from model_cnn import CNN
 
@@ -14,7 +14,7 @@ flags.DEFINE_integer("embedding_dim", 7, "Input size [1]")#input data sample    
 flags.DEFINE_integer("num_filters", 256, "Size of one LSTM cell [128]")                              #卷积核的个数
 flags.DEFINE_integer("hidden_dim", 128, "Size of one LSTM cell [128]")                               #全连接层神经元的个数
 flags.DEFINE_integer("kernel_size", 3, "Num of layer [1]")                                           #卷积核的尺寸
-flags.DEFINE_integer("num_steps2", 30, "Num of steps [30]")                                          #每次训练、预测的窗口的大小
+flags.DEFINE_integer("num_steps2", 31, "Num of steps [30]")                                          #每次训练、预测的窗口的大小
 flags.DEFINE_string("stock_symbol2", "szzs2", "Target stock symbol [None]")                            #股票的名字，它仿佛是想做一个队列？但是这为啥就只能填一个
 
 
@@ -60,7 +60,7 @@ def load_szzs2(input_size, num_steps,target_symbol=None, test_ratio=0.2):
                 test_ratio=test_ratio)
 
 def main(_):
-    # pp.pprint(FLAGS.__flags)
+    pp.pprint(FLAGS.__flags)
     run_config = tf.ConfigProto()                #控制GPU资源的使用
     run_config.gpu_options.allow_growth = True    # 使用allow_growth option，刚一开始分配少量的GPU容量，然后按需慢慢的增加，由于不会释放内存，所以会导致碎片
     tf.reset_default_graph()
@@ -87,9 +87,9 @@ def main(_):
 
         if FLAGS.train:
             rnn_model.load()
-        # rnn_model.train(stock_data_list, FLAGS)
-        # rnn_model.test(stock_data_list, FLAGS)
-        Lstm_predict=rnn_model.test2(stock_data_list)
+        # rnn_model.train(stock_data_list, FLAGS)               #LSTM的训练过程
+        # rnn_model.test(stock_data_list, FLAGS)                #LSTM的测试过程
+        Lstm_predict=rnn_model.test2(stock_data_list)           #LSTM的预测过程
 
     tf.reset_default_graph()
     with tf.Session(config=run_config) as sess:
@@ -111,8 +111,8 @@ def main(_):
 
         if FLAGS.train:
             cnn_model.load()
-        # cnn_model.train(cnn_data_list, FLAGS)
-        CNN_predict=cnn_model.test(cnn_data_list)
+        # cnn_model.train(cnn_data_list, FLAGS)             #CNN的训练过程
+        CNN_predict=cnn_model.test(cnn_data_list)           #CNN的预测过程
 
         for i in range(len(CNN_predict)):
             Lstm_predict[i] = CNN_predict[i]
@@ -120,6 +120,9 @@ def main(_):
         for i in range(len(Lstm_predict)):
             result.append(result[i]*(1+Lstm_predict[i]))
         print(result[1:])
+        # 将预测结果写入.CSV文件内
+        dataframe = pd.DataFrame({'pred': np.array(result[1:]).tolist()})
+        dataframe.to_csv(os.path.join("predictions", "pred.csv"), index=False, sep=',')
 
 
 if __name__ == '__main__':

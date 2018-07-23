@@ -397,7 +397,7 @@ class LstmRNN(object):
     def plot_samples(self, preds, targets, figname, stock_sym=None):             #绘图，将当前的预测值和真实值绘制成png
         def flatten(seq):  # 将二维的数组变成一维的
             return [x for y in seq for x in y]
-        num_point = len(preds)                                                           #每幅图绘制的点的个数
+        num_point =100                                                     #每幅图绘制的点的个数
 
         print(preds)
         print(targets)

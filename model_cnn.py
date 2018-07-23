@@ -79,7 +79,7 @@ class CNN(object):
 
     def train(self,dataset_list,config):
 
-        print("Loading training and validation data...")
+        print("开始训练")
         if not config.train:
             tf.global_variables_initializer().run()       #对参数进行初始化
 
@@ -130,7 +130,7 @@ class CNN(object):
                     # # 输出当前的训练集的损失，测试集的损失
                     #     global_step, epoch, learning_rate,  test_loss))
 
-                    # for sample_sym, indices in sample_indices.items():  # 将字典转换为列表
+
                     image_path = os.path.join(self.model_plots_dir, "{}_epoch{:02d}_step{:04d}.png".format(  # 给图片命名
                         dataset_list.stock_sym, epoch, epoch_step))
 

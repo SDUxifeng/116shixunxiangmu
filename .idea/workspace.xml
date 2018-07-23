@@ -2,14 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="534f35c9-326b-40c9-b769-4253bb94dd70" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/data_model.py" afterPath="$PROJECT_DIR$/data_model.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/data_model_cnn.py" afterPath="$PROJECT_DIR$/data_model_cnn.py" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/checkpoint" afterPath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/checkpoint" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531380593.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531380750.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531380946.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531380981.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531381548.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531382180.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/events.out.tfevents.1531486585.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-1.index.tempstate14885881832848971953" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-101.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-101.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-101.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-10801.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-10801.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-10801.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-10901.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-10901.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-10901.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11001.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11001.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11001.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11101.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11101.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11101.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11201.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11201.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-11201.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-201.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-201.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-201.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-301.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-301.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-301.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-401.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-401.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step30_input1/stock_rnn_lstm128_step30_input1.model-401.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/events.out.tfevents.1531405988.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/events.out.tfevents.1531406089.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/events.out.tfevents.1531406444.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/events.out.tfevents.1531486881.LJW" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-1.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-1.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-1.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-101.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-101.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-101.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-201.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-201.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-201.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4701.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4701.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4701.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4801.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4801.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4801.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4901.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4901.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-4901.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-5101.data-00000-of-00001" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-5101.index" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/stock_rnn_lstm128_step31_input1/stock_rnn_lstm128_step31_input1.model-5101.meta" afterPath="" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/main_cnn.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/model_cnn.py" afterPath="$PROJECT_DIR$/model_cnn.py" />
       <change beforePath="$PROJECT_DIR$/model_rnn.py" afterPath="$PROJECT_DIR$/model_rnn.py" />
+      <change beforePath="$PROJECT_DIR$/predictions/test2.csv" afterPath="$PROJECT_DIR$/predictions/test2.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,12 +78,46 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="data_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-445">
+              <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_model_cnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_model_cnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_rnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model_rnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="400" column="0" lean-forward="true" selection-start-line="400" selection-start-column="0" selection-end-line="400" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_cnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model_cnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1284">
+              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -35,8 +128,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+            <state relative-caret-position="-969">
+              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -49,9 +142,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="9" />
-    <option name="y" value="33" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/data_model_cnn.py" />
+        <option value="$PROJECT_DIR$/model_cnn.py" />
+        <option value="$PROJECT_DIR$/model_rnn.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-326" />
+    <option name="y" value="120" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -71,7 +174,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -83,6 +185,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -142,25 +245,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -182,10 +285,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_model_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7752">
+          <caret line="408" column="0" lean-forward="false" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="2432">
+          <caret line="128" column="12" lean-forward="true" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2147">
           <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_model_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1284">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="400" column="0" lean-forward="true" selection-start-line="400" selection-start-column="0" selection-end-line="400" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-445">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

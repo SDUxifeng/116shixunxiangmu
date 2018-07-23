@@ -4,7 +4,7 @@ import pandas as pd
 import random
 import time
 
-random.seed(time.time())
+# random.seed(time.time())
 
 #test_ratio:split train and test
 class CNNStockDataSet(object):
@@ -48,8 +48,8 @@ class CNNStockDataSet(object):
         train_size = int(len(X) * (1.0 - self.test_ratio))                                    #分割出训练集和测试集
         train_X, test_X = X[:train_size], X[train_size:]
         train_y, test_y = y[:train_size], y[train_size:]
-        return train_X, train_y, test_X, test_y,predict_X
-        # return X,y,X,y
+        # return train_X, train_y, test_X, test_y,predict_X
+        return X,y,X,y,predict_X
 
     def generate_one_epoch(self, batch_size):                  #产生一个生成器
         num_batches = int(len(self.train_X)) // batch_size     #计算共有多少批次

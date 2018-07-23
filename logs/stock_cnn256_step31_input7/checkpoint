@@ -1,0 +1,2 @@
+model_checkpoint_path: "stock_cnn256_step31_input7.model-1801"
+all_model_checkpoint_paths: "stock_cnn256_step31_input7.model-1801"
